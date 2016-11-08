@@ -465,7 +465,7 @@ RTC::ReturnCode_t ControlEducatorVehicle::onExecute(RTC::UniqueId ec_id)
 	}
 	if (m_touchIn.isNew())
 	{
-		if(m_touchIn.isNew())m_touchIn.read();
+		while(m_touchIn.isNew())m_touchIn.read();
 		if (m_touch.data.length() >= 2)
 		{
 			touch_r = m_touch.data[0];
